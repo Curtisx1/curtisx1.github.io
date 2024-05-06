@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curtis Lemke</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+<body>
+
+    <div class="section" id="image">
+        <h2>Curtis Lemke</h2>
+        <img src="headshot.png" alt="Your Name">
+    </div>
+
+    <div class="section" id="bio">
+        <h2>Professional Bio</h2>
+        <p>
+            I am a dedicated and experienced Technical Support Specialist pursuing a Bachelor of Science in Computer Science 
+            and a minor in Mathematics from the University of Missouri - Kansas City. I also have a background in Communications 
+            with an emphasis on Web & Interactive Media from Pittsburg State University.
+        </p>
+        <p>
+            I am proficient in Python, C/C++, and PowerShell, and have experience with various tools and frameworks such as 
+            Git, GitHub, Postman, RESTful API, Visual Studio & VS Code, AWS (S3, Lambda), Jira, and Docker.
+        </p>
+        <p>
+            In my roles at MHC Kenworth and ScriptPro, I have demonstrated my ability to provide professional and proactive 
+            support for all technical aspects of the business, manage large-scale projects, and design, create, and implement 
+            programs to automate internal processes. I have also shown my ability to support and maintain remote locations across 
+            the US, addressing issues related to PC hardware, software, and robotic systems.
+        </p>
+        <p>
+            I have a track record of improving internal processes, writing internal training documentation, and developing training 
+            materials. My project, LIA (A dashboard and automation program), showcases my ability to automate processes using Python and Powershell. 
+            I am a problem-solver who is always ready to take on new challenges and continuously strives to improve and streamline solutions.
+        </p>
+        <p>
+        You can find more about me on my <a href="https://github.com/Curtisx1">Github</a> and <a href="https://www.linkedin.com/in/curtisx1/">LinkedIn</a> profiles or visit my personal website at <a href="http://Lemke.codes">Lemke.codes</a>.
+        </p>
+    </div>
+
+    <div class="section" id="resume">
+        <h2>Resume</h2>
+        <button id="displayButton">Show</button>
+        <iframe id="resumeFrame" style="display:none;width:100%;height:100vh;"></iframe>
+    </div>
+
+    <div class="section centered" id="education">
+        <h2>Education Background</h2>
+        <p>I initially attended Pittsburg State University majoring in communication with an emphasis in web and interactive media. 
+        I ended up leaving and not completing that degree. After a few years of working in technical support positions, I realized I really enjoyed programming 
+        and enrolled at UMKC majoring in Computer Science with a minor in math. </p>
+        <ul class="course-list">
+            <li>Problem Solving & Programming I (Python)</li>
+            <li>Problem Solving & Programming II (C++)</li>
+            <li>Data Structures</li>
+            <li>Discrete Structures I</li>
+            <li>Discrete Structures II</li>
+            <li>Calculus I</li>
+        </ul>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Projects</h2>
+        <a href="greenhouse.html" class="project">
+            <h3>Greenhouse</h3>
+            <p>An Arduino powered automatic greenhouse.</p>
+        </a>
+        <a href="lia.html" class="project">
+            <h3>LIA</h3>
+            <p>A technical support dashboard and automation program.</p>
+        </a>
+        <!-- Add more projects as needed -->
+    </div>
+
+    <script>
+        document.getElementById('displayButton').addEventListener('click', function() {
+            var frame = document.getElementById('resumeFrame');
+            var button = document.getElementById('displayButton');
+            if (frame.style.display === 'none') {
+                frame.src = 'lemke_resume_2024.pdf';
+                frame.style.display = 'block';
+                button.textContent = 'Hide';
+            } else {
+                frame.style.display = 'none';
+                button.textContent = 'Show';
+            }
+        });
+        </script>
+
+</body>
+</html>

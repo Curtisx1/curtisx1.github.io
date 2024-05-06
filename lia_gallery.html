@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LIA Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <div id="gallery" class="gallery"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const screenshots = [
+                { thumbnail: 'example_screenshots/about_section.png', full: 'example_screenshots/about_section.png', alt: 'Screenshot 1' },
+                { thumbnail: 'example_screenshots/add_user.png', full: 'example_screenshots/add_user.png', alt: 'Screenshot 2' },
+                { thumbnail: 'example_screenshots/add_user_form_validation.png', full: 'example_screenshots/add_user_form_validation.png', alt: 'Screenshot 3' },
+                { thumbnail: 'example_screenshots/add_user_invalid_email.png', full: 'example_screenshots/add_user_invalid_email.png', alt: 'Screenshot 4' },
+                { thumbnail: 'example_screenshots/add_user1.png', full: 'example_screenshots/add_user1.png', alt: 'Screenshot 5' },
+                { thumbnail: 'example_screenshots/agent_add_confirm.png', full: 'example_screenshots/agent_add_confirm.png', alt: 'Screenshot 6' },
+                { thumbnail: 'example_screenshots/agent_added.png', full: 'example_screenshots/agent_added.png', alt: 'Screenshot 7' },
+                { thumbnail: 'example_screenshots/del_confirm2.png', full: 'example_screenshots/del_confirm2.png', alt: 'Screenshot 8' },
+                { thumbnail: 'example_screenshots/delete_confirm.png', full: 'example_screenshots/delete_confirm.png', alt: 'Screenshot 9' },
+                { thumbnail: 'example_screenshots/delete_confirm2.png', full: 'example_screenshots/delete_confirm2.png', alt: 'Screenshot 10' },
+                { thumbnail: 'example_screenshots/directions_page.png', full: 'example_screenshots/directions_page.png', alt: 'Screenshot 11' },
+                { thumbnail: 'example_screenshots/error_message.png', full: 'example_screenshots/error_message.png', alt: 'Screenshot 12' },
+                { thumbnail: 'example_screenshots/normal_run_screen.png', full: 'example_screenshots/normal_run_screen.png', alt: 'Screenshot 13' },
+                { thumbnail: 'example_screenshots/normal_run_screen2.png', full: 'example_screenshots/normal_run_screen2.png', alt: 'Screenshot 15' },
+                { thumbnail: 'example_screenshots/not_delete.png', full: 'example_screenshots/not_delete.png', alt: 'Screenshot 16' },
+                { thumbnail: 'example_screenshots/reset_options.png', full: 'example_screenshots/reset_options.png', alt: 'Screenshot 17' },
+                { thumbnail: 'example_screenshots/sirens.png', full: 'example_screenshots/sirens.png', alt: 'Screenshot 18' },
+                { thumbnail: 'example_screenshots/start_stop_options.png', full: 'example_screenshots/start_stop_options.png', alt: 'Screenshot 19' },
+                { thumbnail: 'example_screenshots/update_error_text.png', full: 'example_screenshots/update_error_text.png', alt: 'Screenshot 20' },
+                { thumbnail: 'example_screenshots/view_users_page.png', full: 'example_screenshots/view_users_page.png', alt: 'Screenshot 21' },
+            ];
+
+            const galleryContainer = document.getElementById('gallery');
+
+            screenshots.forEach(image => {
+                const link = document.createElement('a');
+                link.href = image.full;
+                link.setAttribute('data-lightbox', 'screenshots');
+                link.setAttribute('data-title', image.alt);
+
+                const img = document.createElement('img');
+                img.src = image.thumbnail;
+                img.alt = image.alt;
+
+                link.appendChild(img);
+                galleryContainer.appendChild(link);
+            });
+        });
+    </script>
+
+</body>
+</html>

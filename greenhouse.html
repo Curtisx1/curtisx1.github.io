@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Greenhouse</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Overview Section -->
+    <div class="section" id="overview">
+        <h2>Project Overview</h2>
+        <h3><a href="https://github.com/Curtisx1/Arduino" target="_blank">Arduino Code</a></h3>
+        <h3><a href="https://github.com/Curtisx1/timeLapse" target="_blank">Timelapse Code</a></h3>
+        <p>
+            This was a project that snowballed into a giant learning experience and is FAR from complete. It has produced some really nice flowers and herbs though!
+        </p>
+        <p>
+            Spring of 2023 I put together a greenhouse with no plans and no end goal. 
+            Made of corrugated plastic, mylar reflective sheeting, glass panels, tape, glue, screws, and a small folding table, I had a fairly solid greenhouse in my office. 
+        </p>
+        <p>
+            Problems began when due to poor ventilation and weak lighting. I added more grow lights and an automatic timer plugged into an outlet. 
+            For the ventilation I added an old PC fan. How do I power this fan automatically? Which led to the Arduino… 
+        </p>
+    </div>
+
+    <!-- Overview Section - Tech stack used and hardware -->
+    <div class="section" id="overview">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li><strong>Language: </strong>Python, C++</li>
+            <li><strong>IDE: </strong>Visual Studio Code, Arduino IDE</li>
+            <li><strong>Version Control: </strong>Git</li>
+        </ul>
+    </div>
+        <div class="section" id="overview">
+        <h2>Equiptment</h2>
+        <ul>
+            <li><strong>Microcontroller: </strong>Arduino RP2040 Connect</li>
+            <li><strong>Camera: </strong>Canon Rebel T6i</li>
+        </ul>
+    </div>
+        <div class="section" id="overview">
+        <h2>Smaller hardware items</h2>
+        <ul>
+            <li>Exhaust fan</li>
+            <li>Internal fan</li>
+            <li>Servo (opens and closes exhaust fan cover)</li>
+            <li>4 DHT11 humidity and temperature sensors</li>
+            <li>2 5v to 12v relays to control the fans</li>
+            <li>WIRES AND WIRES</li>
+        </ul>
+    </div>
+
+    <!-- Overview Section -  Problems! -->
+    <div class="section" id="overview">
+        <h2>Problems...</h2>
+        <p style="text-align: center;">This is really a hobby project, which means it has a lot of problems right now.</p>
+        
+        <ol>
+            <li><strong>Invalid data results</strong></li>
+                <ul>
+                    <li>
+                        The main issue I am fighting is invalid data values from my sensors. I have 4 humidity and temperature sensors. In general the data is accurate but
+                        sometimes I get invalid results such as readings of 120C for temperature which I doubt are accurate. When this happens, it triggers the exhaust fan when 
+                        it is not required. From researching, this is most likely due to the cheap sensors used. I am working towards replacing them with higher quality Bosch sensors.
+                    </li>
+                </ul>
+            <li><strong>Error handling</strong></li>
+            <ul>
+                <li>
+                    Being new to Arduino and embedded programming, it has been hard to recover from errors. So far I have had to physically reset the microcontroller. Currently,
+                    working to add a logging file to track errors.
+                </li>
+            </ul>
+            <li><strong>Camera issues</strong></li>
+            <ul>
+                <li>
+                    I had to get a special cable for data transfer and capture on my PC using Python. I also had to get an external power supply for the camera. Right now
+                    I am having issues with focus. As the humidity rises in the greenhouse and the plants grow, the focus is shifted and is hard to fix.
+                </li>
+            </ul>
+            <li><strong>Hardware setup/design</strong></li>
+            <ul>
+                <li>
+                    At this point in my greenhouse journey, I really want to rebuild it. I had <i>no intentions</i> of fully automating growing plants. The physical limitations
+                    and size are holding me back. 
+                </li>
+            </ul>
+            <li><strong>Plant issues!</strong></li>
+            <ul>
+                <li>
+                    Growing plants is easy! Until its not. Some of my plants LOVE humidity and higher temperatures, others do not. Balancing the right levels and making sure
+                    each plant is happy has been a Balancing act.
+                </li>
+            </ul>
+        </ol>
+    </div>
+
+    <!-- Overview Section - Future plans -->
+    <div class="section" id="overview">
+        <h2>Future Plans</h2>
+        <ul>
+            <li>Fully automated watering system (I have the sensor, pump, hosing, and nozzles!)</li>
+            <li>Rebuild the physical structure to accommodate the above.</li>
+            <li>Fully build out the Arduino IOT dashboard. Mostly built at this point</li>
+            <li>Complete a full timelapse of seed to flower!</li>
+        </ul>
+    </div>
+
+    <div class="section" id="video">
+        <h2>Plant Growth Timelapse</h2>
+        <p><i>Still working on getting the focus correct. This was taken after getting an external power source for my camera. The time jumps are from the camera dying :)</i></p>
+        <p style="text-align: center;"><i>Roughly 4680 photos taken over a week at 120 frames a second.</i></p>
+        <video controls>
+            <source src="https://s3.us-east-2.amazonaws.com/lemke.codes/output.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Example Screenshots Section -->
+    <div class="section" id="screenshots">
+        <h2>Example Screenshots</h2>
+        <div class="screenshot">
+            <p style="text-align: center;">This is the Arduino IOT dashboard I have built. When the system is running, it displays live data.</p>  
+            <img src="example_screenshots/arduino_dash.png" alt="Arduino Dashboard">
+            <p style="text-align: center;">The greenhouse with the main door open.</p>  
+            <img src="example_screenshots/greenhouse1.jpg" alt="Arduino Dashboard">
+            <p style="text-align: center;">Camera setup view looking through the window.</p>  
+            <img src="example_screenshots/camera.jpg" alt="Arduino Dashboard">
+            <p style="text-align: center;">What the camera sees through the window. The window has a cover on a hinge when not in use.</p>  
+            <img src="example_screenshots/window_view.jpg" alt="Arduino Dashboard">
+            <p style="text-align: center;">The exhaust fan and cover. You can tell this is NOT a proffessional level job... I went through so many iterations which results in the duct tape :)</p>  
+            <img src="example_screenshots/fan.jpg" alt="Arduino Dashboard">
+            <p style="text-align: center;">The RP2040 on a screw terminal. 5v and 12v are powered through DC adapters. Plugged into the breadboard. The blue boxes are the relays. Very much a prototype and experimental.</p>  
+            <img src="example_screenshots/arduino_wires.jpg" alt="Arduino Dashboard">
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LIA Project</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Overview Section -->
+    <div class="section" id="overview">
+        <h2>Project Overview</h2>
+        <h3><a href="https://github.com/Curtisx1/LIA-Public" target="_blank">Github Link</a></h3>
+        <p>
+            Working in technical support, you do the same things over and over again… a LOT. 
+            There were two things I had to do multiple times a day. 
+        </p>
+        <p style="margin-left: 12em;">
+            1.	Listen to voicemails left in an Outlook inbox from callers and transcribe them into a Jira ticket.<br>
+            2.	Assign out tickets to the team that were opening via email or from the above voicemail process.
+
+        </p>
+        <p>
+            On a busy day this could easily be 50+ tickets combined. I was sick of it. 
+            I knew we could do better and that I could create a tool that would automatically do this with no user intervention.
+            I started reading into Jira’s API. I had no idea what I was doing and was not sure it would even work.
+        </p>
+        <p>
+            Originally, I had one function written in Python that would simply make a ticket based on information I had manually typed in. This was just the start. 
+            Eventually the program ballooned into a GUI written in TKinter. Which I was really happy with, for about a day. 
+            Tkinter is great for super simple GUI’s but falls short with the sort of features I needed to make this a 100% uptime automation GUI dashboard. 
+            I rewrote the entire program using PyQT for the GUI and LIA (Lemke’s Internal Automation) was born.
+            A 65” inch TV displays my GUI for our technical support team to view and it has been creating and assigning tickets for over a year now. 
+        </p>
+    </div>
+
+    <!-- Overview Section - Tech stack used -->
+    <div class="section" id="overview">
+        <h2>Technologies Used</h2>
+        <ul>
+            <li><strong>Language: </strong>Python</li>
+            <li><strong>IDE: </strong>Visual Studio Code</li>
+            <li><strong>Data Storage: </strong>JSON Files</li>
+            <li><strong>GUI: </strong>PyQt5</li>
+            <li><strong>Version Control: </strong>Git</li>
+        </ul>
+    </div>
+    <!-- Overview Section -  Stats and Outcomes -->
+    <div class="section" id="overview">
+        <h2>Stats and Outcomes</h2>
+        <p>Over the past year LIA has run almost 24/7 creating tickets and assigning them out when a tech is available.</p>
+        <p style="text-align: center;">
+            Here are the stats so far:
+        </p>
+        
+        <ul>
+            <li><strong>Tickets created from emails: </strong>3476</li>
+            <li><strong>Tickets created from voicemails: </strong>5130</li>
+            <li><strong>Total tickets created and assigned: </strong>8606</li>
+            <li><strong>Time saved: </strong>717 hours (based on 5 minutes average to create and assign the ticket)</li>
+            <li><strong>Money saved: </strong>$14,340 (based on $20 an hour per tech)</li>
+            <li><strong>Time to ticket resolution: </strong>Reduced from 1 hour 25 minutes to less than 45 minutes.</li>
+        </ul>
+    </div>
+
+    <!-- Overview Section -  Problems! -->
+    <div class="section" id="overview">
+        <h2>Problems...</h2>
+        <p style="text-align: center;">If I listed all of them here, this page would scroll for days. I chose the top 5 problems.</p>
+        
+        <ol>
+            <li><strong>Assigning tickets out evenly</strong></li>
+                <ul>
+                    <li>
+                        We have a team of 8 people, they all come in at staggered times, leave for lunch at different times,
+                        and leave for the day at different times. They may also be on PTO and not present for the day.
+                        I had to account for all of these factors. I implemented a weighted system that will only assign a ticket
+                        to the user with the lowest weight.
+                    </li>
+                </ul>
+            <li><strong>Error handling</strong></li>
+            <ul>
+                <li>
+                    This is still a work in progress. Trying to catch and recover from all possible errors has proven to be a 
+                    weekly task. The GUI used to crash MULTIPLE times a day. It now can run 24/7 without crashing and correctly logs the error. 
+                    I have yet to run into a new error at this point. Still working on recovering from losing network access.
+                </li>
+            </ul>
+            <li><strong>Auto-start and Auto-stop</strong></li>
+            <ul>
+                <li>
+                    We do not want the auto-unassign feature running after hours. Adding a new thread that checks the time and starts it at
+                    6:30AM and stops it at 6:00PM proved to be a challenge. I am happy to say it now works flawlessly.
+                </li>
+            </ul>
+            <li><strong>Counter resets based on day/week/month</strong></li>
+            <ul>
+                <li>
+                    Testing the counter resets was difficult and not full proof. I am still chasing down a reason on why the week/month 
+                    does not reset properly <i>sometimes.</i>
+                </li>
+            </ul>
+            <li><strong>Multi-threading</strong></li>
+            <ul>
+                <li>
+                    Multi-threading was an all new concept to me when first working with PyQt5. I spend a solid week trying to figure out why
+                    elements in my GUI were not updating, only to learn about the "socket and slot" methods for updating main GUI elements.
+                </li>
+            </ul>
+        </ol>
+    </div>
+    <!-- Example Screenshots Section -->
+    <div class="section" id="screenshots">
+        <h2>Example Screenshots</h2>
+        <div class="screenshot">
+            <p style="text-align: center;"><i>Names censored for privacy</i></p>
+            <p style="text-align: center;"><i>The GUI has a lot of features and takes a lot of screenshots to demonstrate. You can view a full album of screenshots below.</i></p>
+            <p style="text-align: center;"><strong><a href="lia_gallery.html" target="_blank">Lia Gallery</a></strong></p>
+            <p style="text-align: center;">This is the main GUI, this is what is displayed 90% of the time.</p>            
+            <img src="example_screenshots/normal_run_screen.png" alt="LIA Screenshot 1">
+        </div>
+
+        <div class="screenshot">
+            <p style="text-align: center;">Start/Stop options for both the auto-assign feature and auto-voicemail creation.</p>
+            <img src="example_screenshots/start_stop_options.png" alt="LIA Screenshot 2">
+        </div>
+
+        <div class="screenshot">
+            <p style="text-align: center;">The manage users section allows you to view/add/delete users to the dashboard.</p>
+            <img src="example_screenshots/add_user.png" alt="LIA Screenshot 3">
+            <img src="example_screenshots/add_user1.png" alt="LIA Screenshot 4">
+            <img src="example_screenshots/add_user_form_validation.png" alt="LIA Screenshot 5">
+            <img src="example_screenshots/add_user_invalid_email.png" alt="LIA Screenshot 6">
+            <img src="example_screenshots/add_user_form_validation.png" alt="LIA Screenshot 7">
+            <img src="example_screenshots/agent_added.png" alt="LIA Screenshot 8">
+        </div>
+    </div>
+
+</body>
+</html>

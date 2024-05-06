@@ -1,0 +1,122 @@
+#displayButton {
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.section {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%;
+}
+
+@media (min-width: 600px) {
+    .section {
+        width: 75%;
+    }
+}
+
+@media (min-width: 900px) {
+    .section {
+        width: 50%;
+    }
+}
+
+.section h2 {
+    margin-top: 0;
+}
+
+.section img {
+    max-width: 100%;
+}
+
+.course-list {
+    list-style-position: inside;
+    text-align: left;
+    padding-left: 0;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    text-align: left;
+}
+
+.section#video {
+    width: 100%; /* Take up the full width of its parent */
+    max-width: 1280px; /* Adjust as needed */
+    margin: 0 auto; /* Center the video if the parent is larger */
+}
+
+.section#video video {
+    width: 100%;
+    height: auto;
+}
+
+.project p {
+    text-align: center;
+}
+
+.project a {
+    text-decoration: none;
+}
+
+.project p {
+    text-align: center;
+}
+
+.project a {
+    text-decoration: none;
+}
+
+.project {
+    display: block; /* Make the link behave like a block-level element */
+    padding: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: inherit; /* Make the text color the same as non-link text */
+    transition: background-color 0.5s ease; /* Smooth transition */
+    box-sizing: border-box; /* Include padding and border in total width and height */
+}
+
+.project:hover {
+    background-color: #f0f0f0; /* Change the background color when the link is hovered over */
+}
+
+ul {
+    display: inline-block; /* Makes the ul behave like an inline element */
+    text-align: left; /* Ensures text inside ul is left-aligned */
+    padding-left: 0; /* Remove default padding */
+    margin: 0; /* Optional: Remove margin to tightly fit content */
+    margin-left: 2em; /* Adjust this value for more or less indentation */
+    padding-left: 1em; /* Add some inner padding to the list */
+}
+
+ol {
+    display: inline-block; /* Makes the ul behave like an inline element */
+    text-align: left; /* Ensures text inside ul is left-aligned */
+    padding-left: 0; /* Remove default padding */
+    margin: 0; /* Optional: Remove margin to tightly fit content */
+}
+
+li {
+    text-align: left;
+}
+
+.gallery img {
+    width: 150px; /* Adjust the size */
+    margin: 10px; /* Adjust the spacing */
+    cursor: pointer;
+}
